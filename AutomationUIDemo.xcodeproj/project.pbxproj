@@ -7,14 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		227675581BE2F0180030C638 /* OptionOneCellViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227675571BE2F0180030C638 /* OptionOneCellViewControllers.swift */; };
 		22D2DAF61BE28FF400238CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DAF51BE28FF400238CF6 /* AppDelegate.swift */; };
-		22D2DAF81BE28FF400238CF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DAF71BE28FF400238CF6 /* ViewController.swift */; };
+		22D2DAF81BE28FF400238CF6 /* OptionOneControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DAF71BE28FF400238CF6 /* OptionOneControllers.swift */; };
 		22D2DAFB1BE28FF400238CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22D2DAF91BE28FF400238CF6 /* Main.storyboard */; };
 		22D2DAFE1BE28FF400238CF6 /* AutomationUIDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DAFC1BE28FF400238CF6 /* AutomationUIDemo.xcdatamodeld */; };
 		22D2DB001BE28FF400238CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22D2DAFF1BE28FF400238CF6 /* Assets.xcassets */; };
 		22D2DB031BE28FF400238CF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22D2DB011BE28FF400238CF6 /* LaunchScreen.storyboard */; };
 		22D2DB0E1BE28FF400238CF6 /* AutomationUIDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DB0D1BE28FF400238CF6 /* AutomationUIDemoTests.swift */; };
 		22D2DB191BE28FF400238CF6 /* AutomationUIDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DB181BE28FF400238CF6 /* AutomationUIDemoUITests.swift */; };
+		22D2DB271BE2903600238CF6 /* AutomationTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D2DB261BE2903600238CF6 /* AutomationTableView.xib */; };
+		22D2DB291BE292EF00238CF6 /* AutomationTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DB281BE292EF00238CF6 /* AutomationTableView.swift */; };
+		22D2DB391BE2961B00238CF6 /* CellProcessPlan+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DB2B1BE2961B00238CF6 /* CellProcessPlan+CoreDataProperties.swift */; };
+		22D2DB3A1BE2961B00238CF6 /* CellProcessPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DB2C1BE2961B00238CF6 /* CellProcessPlan.swift */; };
+		22D2DB3B1BE2961B00238CF6 /* ProcessPlan+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DB2D1BE2961B00238CF6 /* ProcessPlan+CoreDataProperties.swift */; };
+		22D2DB3C1BE2961B00238CF6 /* ProcessPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DB2E1BE2961B00238CF6 /* ProcessPlan.swift */; };
+		22D2DB3D1BE2961B00238CF6 /* ProcessPlanRevision+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DB2F1BE2961B00238CF6 /* ProcessPlanRevision+CoreDataProperties.swift */; };
+		22D2DB3E1BE2961B00238CF6 /* ProcessPlanRevision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DB301BE2961B00238CF6 /* ProcessPlanRevision.swift */; };
+		22D2DB3F1BE2961B00238CF6 /* CellProcessPlanRevision+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DB311BE2961B00238CF6 /* CellProcessPlanRevision+CoreDataProperties.swift */; };
+		22D2DB401BE2961B00238CF6 /* CellProcessPlanRevision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DB321BE2961B00238CF6 /* CellProcessPlanRevision.swift */; };
+		22D2DB411BE2961B00238CF6 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DB331BE2961B00238CF6 /* Category+CoreDataProperties.swift */; };
+		22D2DB421BE2961B00238CF6 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DB341BE2961B00238CF6 /* Category.swift */; };
+		22D2DB431BE2961B00238CF6 /* CellEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DB351BE2961B00238CF6 /* CellEntity+CoreDataProperties.swift */; };
+		22D2DB441BE2961B00238CF6 /* CellEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DB361BE2961B00238CF6 /* CellEntity.swift */; };
+		22D2DB451BE2961B00238CF6 /* Cell+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DB371BE2961B00238CF6 /* Cell+CoreDataProperties.swift */; };
+		22D2DB461BE2961B00238CF6 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DB381BE2961B00238CF6 /* Cell.swift */; };
+		22D2DB4B1BE2A4BA00238CF6 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DB4A1BE2A4BA00238CF6 /* CoreDataHelper.swift */; };
+		22D2DB4D1BE2DFF700238CF6 /* CustomTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D2DB4C1BE2DFF700238CF6 /* CustomTableCell.xib */; };
+		22D2DB4F1BE2E2D500238CF6 /* CustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DB4E1BE2E2D500238CF6 /* CustomTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +55,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		227675571BE2F0180030C638 /* OptionOneCellViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionOneCellViewControllers.swift; sourceTree = "<group>"; };
 		22D2DAF21BE28FF400238CF6 /* AutomationUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutomationUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D2DAF51BE28FF400238CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		22D2DAF71BE28FF400238CF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		22D2DAF71BE28FF400238CF6 /* OptionOneControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionOneControllers.swift; sourceTree = "<group>"; };
 		22D2DAFA1BE28FF400238CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22D2DAFD1BE28FF400238CF6 /* AutomationUIDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AutomationUIDemo.xcdatamodel; sourceTree = "<group>"; };
 		22D2DAFF1BE28FF400238CF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +70,25 @@
 		22D2DB141BE28FF400238CF6 /* AutomationUIDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutomationUIDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D2DB181BE28FF400238CF6 /* AutomationUIDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationUIDemoUITests.swift; sourceTree = "<group>"; };
 		22D2DB1A1BE28FF400238CF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22D2DB261BE2903600238CF6 /* AutomationTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutomationTableView.xib; sourceTree = "<group>"; };
+		22D2DB281BE292EF00238CF6 /* AutomationTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutomationTableView.swift; sourceTree = "<group>"; };
+		22D2DB2B1BE2961B00238CF6 /* CellProcessPlan+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CellProcessPlan+CoreDataProperties.swift"; path = "DataModel/CellProcessPlan+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		22D2DB2C1BE2961B00238CF6 /* CellProcessPlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellProcessPlan.swift; path = DataModel/CellProcessPlan.swift; sourceTree = "<group>"; };
+		22D2DB2D1BE2961B00238CF6 /* ProcessPlan+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ProcessPlan+CoreDataProperties.swift"; path = "DataModel/ProcessPlan+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		22D2DB2E1BE2961B00238CF6 /* ProcessPlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProcessPlan.swift; path = DataModel/ProcessPlan.swift; sourceTree = "<group>"; };
+		22D2DB2F1BE2961B00238CF6 /* ProcessPlanRevision+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ProcessPlanRevision+CoreDataProperties.swift"; path = "DataModel/ProcessPlanRevision+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		22D2DB301BE2961B00238CF6 /* ProcessPlanRevision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProcessPlanRevision.swift; path = DataModel/ProcessPlanRevision.swift; sourceTree = "<group>"; };
+		22D2DB311BE2961B00238CF6 /* CellProcessPlanRevision+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CellProcessPlanRevision+CoreDataProperties.swift"; path = "DataModel/CellProcessPlanRevision+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		22D2DB321BE2961B00238CF6 /* CellProcessPlanRevision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellProcessPlanRevision.swift; path = DataModel/CellProcessPlanRevision.swift; sourceTree = "<group>"; };
+		22D2DB331BE2961B00238CF6 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataProperties.swift"; path = "DataModel/Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		22D2DB341BE2961B00238CF6 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = DataModel/Category.swift; sourceTree = "<group>"; };
+		22D2DB351BE2961B00238CF6 /* CellEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CellEntity+CoreDataProperties.swift"; path = "DataModel/CellEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		22D2DB361BE2961B00238CF6 /* CellEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellEntity.swift; path = DataModel/CellEntity.swift; sourceTree = "<group>"; };
+		22D2DB371BE2961B00238CF6 /* Cell+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Cell+CoreDataProperties.swift"; path = "DataModel/Cell+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		22D2DB381BE2961B00238CF6 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cell.swift; path = DataModel/Cell.swift; sourceTree = "<group>"; };
+		22D2DB4A1BE2A4BA00238CF6 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		22D2DB4C1BE2DFF700238CF6 /* CustomTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableCell.xib; sourceTree = "<group>"; };
+		22D2DB4E1BE2E2D500238CF6 /* CustomTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +140,19 @@
 			isa = PBXGroup;
 			children = (
 				22D2DAF51BE28FF400238CF6 /* AppDelegate.swift */,
-				22D2DAF71BE28FF400238CF6 /* ViewController.swift */,
+				22D2DAF71BE28FF400238CF6 /* OptionOneControllers.swift */,
+				227675571BE2F0180030C638 /* OptionOneCellViewControllers.swift */,
+				22D2DB281BE292EF00238CF6 /* AutomationTableView.swift */,
+				22D2DB4E1BE2E2D500238CF6 /* CustomTableCell.swift */,
 				22D2DAF91BE28FF400238CF6 /* Main.storyboard */,
+				22D2DB261BE2903600238CF6 /* AutomationTableView.xib */,
+				22D2DB4C1BE2DFF700238CF6 /* CustomTableCell.xib */,
+				22D2DB491BE2A4A400238CF6 /* Helper */,
+				22D2DB2A1BE295F200238CF6 /* DataModel */,
+				22D2DAFC1BE28FF400238CF6 /* AutomationUIDemo.xcdatamodeld */,
 				22D2DAFF1BE28FF400238CF6 /* Assets.xcassets */,
 				22D2DB011BE28FF400238CF6 /* LaunchScreen.storyboard */,
 				22D2DB041BE28FF400238CF6 /* Info.plist */,
-				22D2DAFC1BE28FF400238CF6 /* AutomationUIDemo.xcdatamodeld */,
 			);
 			path = AutomationUIDemo;
 			sourceTree = "<group>";
@@ -126,6 +173,35 @@
 				22D2DB1A1BE28FF400238CF6 /* Info.plist */,
 			);
 			path = AutomationUIDemoUITests;
+			sourceTree = "<group>";
+		};
+		22D2DB2A1BE295F200238CF6 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				22D2DB2B1BE2961B00238CF6 /* CellProcessPlan+CoreDataProperties.swift */,
+				22D2DB2C1BE2961B00238CF6 /* CellProcessPlan.swift */,
+				22D2DB2D1BE2961B00238CF6 /* ProcessPlan+CoreDataProperties.swift */,
+				22D2DB2E1BE2961B00238CF6 /* ProcessPlan.swift */,
+				22D2DB2F1BE2961B00238CF6 /* ProcessPlanRevision+CoreDataProperties.swift */,
+				22D2DB301BE2961B00238CF6 /* ProcessPlanRevision.swift */,
+				22D2DB311BE2961B00238CF6 /* CellProcessPlanRevision+CoreDataProperties.swift */,
+				22D2DB321BE2961B00238CF6 /* CellProcessPlanRevision.swift */,
+				22D2DB331BE2961B00238CF6 /* Category+CoreDataProperties.swift */,
+				22D2DB341BE2961B00238CF6 /* Category.swift */,
+				22D2DB351BE2961B00238CF6 /* CellEntity+CoreDataProperties.swift */,
+				22D2DB361BE2961B00238CF6 /* CellEntity.swift */,
+				22D2DB371BE2961B00238CF6 /* Cell+CoreDataProperties.swift */,
+				22D2DB381BE2961B00238CF6 /* Cell.swift */,
+			);
+			name = DataModel;
+			sourceTree = "<group>";
+		};
+		22D2DB491BE2A4A400238CF6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				22D2DB4A1BE2A4BA00238CF6 /* CoreDataHelper.swift */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +308,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D2DB271BE2903600238CF6 /* AutomationTableView.xib in Resources */,
 				22D2DB031BE28FF400238CF6 /* LaunchScreen.storyboard in Resources */,
+				22D2DB4D1BE2DFF700238CF6 /* CustomTableCell.xib in Resources */,
 				22D2DB001BE28FF400238CF6 /* Assets.xcassets in Resources */,
 				22D2DAFB1BE28FF400238CF6 /* Main.storyboard in Resources */,
 			);
@@ -259,9 +337,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D2DB3D1BE2961B00238CF6 /* ProcessPlanRevision+CoreDataProperties.swift in Sources */,
+				22D2DB411BE2961B00238CF6 /* Category+CoreDataProperties.swift in Sources */,
+				22D2DB3F1BE2961B00238CF6 /* CellProcessPlanRevision+CoreDataProperties.swift in Sources */,
+				22D2DB3E1BE2961B00238CF6 /* ProcessPlanRevision.swift in Sources */,
+				22D2DB451BE2961B00238CF6 /* Cell+CoreDataProperties.swift in Sources */,
+				22D2DB461BE2961B00238CF6 /* Cell.swift in Sources */,
+				227675581BE2F0180030C638 /* OptionOneCellViewControllers.swift in Sources */,
+				22D2DB391BE2961B00238CF6 /* CellProcessPlan+CoreDataProperties.swift in Sources */,
+				22D2DB291BE292EF00238CF6 /* AutomationTableView.swift in Sources */,
+				22D2DB401BE2961B00238CF6 /* CellProcessPlanRevision.swift in Sources */,
+				22D2DB3A1BE2961B00238CF6 /* CellProcessPlan.swift in Sources */,
+				22D2DB441BE2961B00238CF6 /* CellEntity.swift in Sources */,
+				22D2DB4F1BE2E2D500238CF6 /* CustomTableCell.swift in Sources */,
+				22D2DB3B1BE2961B00238CF6 /* ProcessPlan+CoreDataProperties.swift in Sources */,
+				22D2DB431BE2961B00238CF6 /* CellEntity+CoreDataProperties.swift in Sources */,
+				22D2DB4B1BE2A4BA00238CF6 /* CoreDataHelper.swift in Sources */,
 				22D2DAFE1BE28FF400238CF6 /* AutomationUIDemo.xcdatamodeld in Sources */,
-				22D2DAF81BE28FF400238CF6 /* ViewController.swift in Sources */,
+				22D2DAF81BE28FF400238CF6 /* OptionOneControllers.swift in Sources */,
+				22D2DB3C1BE2961B00238CF6 /* ProcessPlan.swift in Sources */,
 				22D2DAF61BE28FF400238CF6 /* AppDelegate.swift in Sources */,
+				22D2DB421BE2961B00238CF6 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +584,7 @@
 				22D2DB1F1BE28FF400238CF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22D2DB201BE28FF400238CF6 /* Build configuration list for PBXNativeTarget "AutomationUIDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +593,7 @@
 				22D2DB221BE28FF400238CF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22D2DB231BE28FF400238CF6 /* Build configuration list for PBXNativeTarget "AutomationUIDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +602,7 @@
 				22D2DB251BE28FF400238CF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

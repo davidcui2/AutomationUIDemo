@@ -1,4 +1,50 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15B42" minimumToolsVersion="Automatic">
+    <entity name="Category" representedClassName=".Category" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cellProcessPlans" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CellProcessPlan" inverseName="category" inverseEntity="CellProcessPlan" syncable="YES"/>
+        <relationship name="cells" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cell" inverseName="category" inverseEntity="Cell" syncable="YES"/>
+        <relationship name="processPlans" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ProcessPlan" inverseName="category" inverseEntity="ProcessPlan" syncable="YES"/>
+    </entity>
+    <entity name="Cell" representedClassName=".Cell" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="cells" inverseEntity="Category" syncable="YES"/>
+        <relationship name="cellEntities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CellEntity" inverseName="cell" inverseEntity="CellEntity" syncable="YES"/>
+    </entity>
+    <entity name="CellEntity" representedClassName=".CellEntity" syncable="YES">
+        <attribute name="isOn" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cell" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cell" inverseName="cellEntities" inverseEntity="Cell" syncable="YES"/>
+        <relationship name="cellProcessPlanRevision" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CellProcessPlanRevision" inverseName="cellEntities" inverseEntity="CellProcessPlanRevision" syncable="YES"/>
+    </entity>
+    <entity name="CellProcessPlan" representedClassName=".CellProcessPlan" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="cellProcessPlans" inverseEntity="Category" syncable="YES"/>
+        <relationship name="revisions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CellProcessPlanRevision" inverseName="cellProcessPlan" inverseEntity="CellProcessPlanRevision" syncable="YES"/>
+    </entity>
+    <entity name="CellProcessPlanRevision" representedClassName=".CellProcessPlanRevision" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cellEntities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CellEntity" inverseName="cellProcessPlanRevision" inverseEntity="CellEntity" syncable="YES"/>
+        <relationship name="cellProcessPlan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CellProcessPlan" inverseName="revisions" inverseEntity="CellProcessPlan" syncable="YES"/>
+    </entity>
+    <entity name="ProcessPlan" representedClassName=".ProcessPlan" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="processPlans" inverseEntity="Category" syncable="YES"/>
+        <relationship name="revisions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ProcessPlanRevision" inverseName="processPlan" inverseEntity="ProcessPlanRevision" syncable="YES"/>
+    </entity>
+    <entity name="ProcessPlanRevision" representedClassName=".ProcessPlanRevision" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="processPlan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProcessPlan" inverseName="revisions" inverseEntity="ProcessPlan" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Category" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="ProcessPlan" positionX="-54" positionY="0" width="128" height="90"/>
+        <element name="ProcessPlanRevision" positionX="-36" positionY="36" width="128" height="90"/>
+        <element name="Cell" positionX="-27" positionY="63" width="128" height="90"/>
+        <element name="CellProcessPlan" positionX="-18" positionY="72" width="128" height="30"/>
+        <element name="CellProcessPlanRevision" positionX="0" positionY="99" width="128" height="30"/>
+        <element name="CellEntity" positionX="18" positionY="126" width="128" height="105"/>
+    </elements>
 </model>

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YhH-aP-eEi">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Option One Manager Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="OptionOneManagerHomeViewController" customModule="AutomationUIDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,276 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" misplaced="YES" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3J7-xS-biC">
+                                <rect key="frame" x="134" y="228" width="332" height="160"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tcM-cs-LAY">
+                                        <rect key="frame" x="0.0" y="0.0" width="332" height="75"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="o1L-fx-c3U">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="75"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="104" id="jQh-PG-KVB"/>
+                                                    <constraint firstAttribute="height" constant="75" id="xpe-kJ-q3y"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                <state key="normal" title="Process Plan">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="wVd-kQ-jbY" kind="show" id="7Iv-DL-zsK"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5uJ-5b-ul7">
+                                                <rect key="frame" x="114" y="0.0" width="104" height="75"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BBI-Wu-W39">
+                                                        <rect key="frame" x="0.0" y="0.0" width="104" height="35"/>
+                                                        <animations/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="104" id="HT0-vv-JAU"/>
+                                                            <constraint firstAttribute="height" constant="35" id="aan-4r-Fox"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                        <state key="normal" title="Manage Cell">
+                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="JHT-V0-EUz">
+                                                        <rect key="frame" x="0.0" y="40" width="104" height="35"/>
+                                                        <animations/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="TRd-g5-3iW"/>
+                                                            <constraint firstAttribute="width" constant="104" id="aKv-Km-tuJ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                        <state key="normal" title="Design Cell">
+                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="Isf-ll-aWt" kind="show" id="YO2-Pg-Gwo"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <animations/>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="IH5-at-RAx">
+                                                <rect key="frame" x="228" y="0.0" width="104" height="75"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="75" id="K59-AS-Yeh"/>
+                                                    <constraint firstAttribute="width" constant="104" id="lJB-yO-bIs"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                <state key="normal" title="Manage Work">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jon-Na-tM5">
+                                        <rect key="frame" x="0.0" y="85" width="332" height="75"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="OtI-xY-Mq6">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="75"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="104" id="9kE-09-o6A"/>
+                                                    <constraint firstAttribute="height" constant="75" id="taH-mt-RDa"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                <state key="normal" title="Manage Job">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5Pe-tn-O3V">
+                                                <rect key="frame" x="114" y="0.0" width="104" height="75"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="104" id="0tL-37-QyT"/>
+                                                    <constraint firstAttribute="height" constant="75" id="Acz-JN-76j"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                <state key="normal" title="Manage ">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="YkW-xB-CgI">
+                                                <rect key="frame" x="228" y="0.0" width="104" height="75"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="104" id="5JC-ut-C8S"/>
+                                                    <constraint firstAttribute="height" constant="75" id="Gkf-VT-IOg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                <state key="normal" title="Manage Users">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="tcM-cs-LAY" secondAttribute="trailing" id="1jK-By-1Ou"/>
+                                    <constraint firstItem="tcM-cs-LAY" firstAttribute="leading" secondItem="3J7-xS-biC" secondAttribute="leading" id="5X0-Rx-ryb"/>
+                                    <constraint firstItem="tcM-cs-LAY" firstAttribute="leading" secondItem="jon-Na-tM5" secondAttribute="leading" id="d1c-i1-p7M"/>
+                                    <constraint firstItem="jon-Na-tM5" firstAttribute="centerX" secondItem="3J7-xS-biC" secondAttribute="centerX" id="qK2-to-p9w"/>
+                                    <constraint firstItem="jon-Na-tM5" firstAttribute="centerY" secondItem="3J7-xS-biC" secondAttribute="centerY" id="zjn-On-oxm"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1jK-By-1Ou"/>
+                                        <exclude reference="5X0-Rx-ryb"/>
+                                        <exclude reference="d1c-i1-p7M"/>
+                                        <exclude reference="qK2-to-p9w"/>
+                                        <exclude reference="zjn-On-oxm"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3J7-xS-biC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N5H-eq-ZIT"/>
+                            <constraint firstItem="3J7-xS-biC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vjh-Do-Olt"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="8wo-9E-hC3"/>
+                    <connections>
+                        <outlet property="_buttonStackView" destination="3J7-xS-biC" id="0vI-GO-T7d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1117" y="429"/>
+        </scene>
+        <!--Option One Design Cell View Controller-->
+        <scene sceneID="PUh-oX-KpB">
+            <objects>
+                <viewController id="Isf-ll-aWt" customClass="OptionOneDesignCellViewController" customModule="AutomationUIDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="73Q-Gc-93p"/>
+                        <viewControllerLayoutGuide type="bottom" id="qAN-Qu-P1l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D8Z-yC-5Fh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ypt-V3-eEr">
+                                <rect key="frame" x="20" y="28" width="57" height="39"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="Ix3-km-MK2"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="JEE-6N-Yad"/>
+                                    <constraint firstAttribute="width" constant="57" id="NQ6-2y-ZDX"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="ZvL-Va-VIk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="BACK"/>
+                                <connections>
+                                    <segue destination="2Vm-Vd-xv6" kind="unwind" unwindAction="unwindToManagerHome:" id="Aui-vQ-TUU"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KXH-Ue-3oh">
+                                <rect key="frame" x="20" y="75" width="560" height="533"/>
+                                <animations/>
+                            </stackView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ypt-V3-eEr" firstAttribute="leading" secondItem="D8Z-yC-5Fh" secondAttribute="leadingMargin" id="9XZ-gK-mTD"/>
+                            <constraint firstItem="Ypt-V3-eEr" firstAttribute="top" secondItem="73Q-Gc-93p" secondAttribute="bottom" constant="8" id="Yq0-Nf-9E1"/>
+                            <constraint firstItem="KXH-Ue-3oh" firstAttribute="top" secondItem="Ypt-V3-eEr" secondAttribute="bottom" constant="8" symbolic="YES" id="cR2-Y4-j9m"/>
+                            <constraint firstItem="KXH-Ue-3oh" firstAttribute="trailing" secondItem="D8Z-yC-5Fh" secondAttribute="trailingMargin" id="equ-pP-9Km"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="KXH-Ue-3oh" secondAttribute="bottom" constant="-8" id="pEH-sm-rSZ"/>
+                            <constraint firstItem="KXH-Ue-3oh" firstAttribute="leading" secondItem="Ypt-V3-eEr" secondAttribute="leading" id="zTN-CS-vXo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="_stackView" destination="KXH-Ue-3oh" id="I3V-Jd-5lc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jfu-Yq-oAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2Vm-Vd-xv6" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1792" y="670"/>
+        </scene>
+        <!--Option One Process Plan View Controller-->
+        <scene sceneID="QC0-nU-GGo">
+            <objects>
+                <viewController id="wVd-kQ-jbY" customClass="OptionOneProcessPlanViewController" customModule="AutomationUIDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aMj-B5-NnI"/>
+                        <viewControllerLayoutGuide type="bottom" id="716-MK-h7Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nEc-Rg-pGh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJp-yI-SFR">
+                                <rect key="frame" x="20" y="20" width="57" height="39"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="NTu-gX-bJm"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="WEj-UU-bco"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="BACK"/>
+                                <connections>
+                                    <segue destination="DsE-r4-94c" kind="unwind" unwindAction="unwindToManagerHome:" id="Pit-Rn-l6o"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ohb-cr-LFq">
+                                <rect key="frame" x="20" y="67" width="560" height="533"/>
+                                <animations/>
+                            </stackView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IJp-yI-SFR" firstAttribute="top" secondItem="aMj-B5-NnI" secondAttribute="bottom" id="41A-do-CuG"/>
+                            <constraint firstItem="IJp-yI-SFR" firstAttribute="leading" secondItem="nEc-Rg-pGh" secondAttribute="leadingMargin" id="Pcg-l0-68J"/>
+                            <constraint firstItem="ohb-cr-LFq" firstAttribute="top" secondItem="IJp-yI-SFR" secondAttribute="bottom" constant="8" id="YKG-xo-tig"/>
+                            <constraint firstItem="716-MK-h7Z" firstAttribute="top" secondItem="ohb-cr-LFq" secondAttribute="bottom" id="cqN-xP-Gwx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ohb-cr-LFq" secondAttribute="trailing" id="jVF-ia-kot"/>
+                            <constraint firstItem="ohb-cr-LFq" firstAttribute="leading" secondItem="nEc-Rg-pGh" secondAttribute="leadingMargin" id="r3v-Rf-9My"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="_stackView" destination="ohb-cr-LFq" id="hGs-k6-otW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2pe-Vt-AZR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="DsE-r4-94c" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1792" y="20"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lyy-hy-Uwy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="YhH-aP-eEi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pLF-GK-oX0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nO0-9v-vNe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o8F-8b-HLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="429"/>
         </scene>
     </scenes>
 </document>
