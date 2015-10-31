@@ -13,6 +13,7 @@ import CoreData
 class CoreDataHelper {
     lazy var managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
+    //MARK:- Category
     func getCategory() -> [Category] {
         
         let fetchRequest = NSFetchRequest(entityName: "Category")
@@ -37,6 +38,13 @@ class CoreDataHelper {
         return saveContext()
     }
     
+    func deleteCategory(category:Category) -> Bool {
+        managedObjectContext.deleteObject(category)
+        return saveContext()
+    }
+    
+    //MARK:- Process Plan
+    
     func getProcessPlan(byCategory category:Category) -> [ProcessPlan] {
         
         return category.processPlans?.allObjects as! [ProcessPlan]
@@ -53,6 +61,8 @@ class CoreDataHelper {
         processPlan.name = name
         return saveContext()
     }
+    
+    //MARK:- Process Plan Revision
     
     func getProcessPlanRevision(byProcessPlan processPlan:ProcessPlan) -> [ProcessPlanRevision] {
         
@@ -71,6 +81,8 @@ class CoreDataHelper {
         return saveContext()
     }
     
+    //MARK:- Cell Process Plan
+    
     func getCellProcessPlan(byCategory category:Category) -> [CellProcessPlan] {
         
         return category.cellProcessPlans?.allObjects as! [CellProcessPlan]
@@ -88,6 +100,22 @@ class CoreDataHelper {
         return saveContext()
     }
     
+    func getAllCellProcessPlan() -> [CellProcessPlan] {
+        let fetchRequest = NSFetchRequest(entityName: "CellProcessPlan")
+        let predicate = NSPredicate(format: "category != nil || category.@count > 0")
+        fetchRequest.predicate = predicate
+        do {
+            let result = try managedObjectContext.executeFetchRequest(fetchRequest)
+            return result as! [CellProcessPlan]
+            
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        return []
+    }
+    
+    //MARK:- Cell Process Plan Revision
+    
     func getCellProcessPlanRevision(byCellProcessPlan cellProcessPlan:CellProcessPlan) -> [CellProcessPlanRevision] {
         
         return cellProcessPlan.revisions?.allObjects as! [CellProcessPlanRevision]
@@ -102,6 +130,45 @@ class CoreDataHelper {
     
     func changeCellProcessPlanRevision(cellProcessPlanRevision:CellProcessPlanRevision, withName name:String) -> Bool {
         cellProcessPlanRevision.name = name
+        return saveContext()
+    }
+    
+    //MARK:- Cell
+    
+    func getCell(byCategory category:Category) -> [Cell] {
+        
+        return category.cells?.allObjects as! [Cell]
+    }
+    
+    func addCell(withName name:String, toCategory category:Category) -> Bool {
+        let newCell = NSEntityDescription.insertNewObjectForEntityForName("Cell", inManagedObjectContext: managedObjectContext) as! Cell
+        newCell.name = name
+        newCell.category = category
+        return saveContext()
+    }
+    
+    func changeCell(cell:Cell, withName name:String) -> Bool {
+        cell.name = name
+        return saveContext()
+    }
+    
+    //MARK:- Cell Entity
+    
+    func getCellEntity(byCell cell:Cell) -> [CellEntity] {
+        
+        return cell.cellEntities?.allObjects as! [CellEntity]
+    }
+    
+    func addCellEntity(withName name:String, toCell cell:Cell, withRevision revision:CellProcessPlanRevision) -> Bool {
+        let newCellEntity = NSEntityDescription.insertNewObjectForEntityForName("CellEntity", inManagedObjectContext: managedObjectContext) as! CellEntity
+        newCellEntity.name = name
+        newCellEntity.cell = cell
+        newCellEntity.cellProcessPlanRevision = revision
+        return saveContext()
+    }
+    
+    func changeCellEntity(cellEntity:CellEntity, withName name:String) -> Bool {
+        cellEntity.name = name
         return saveContext()
     }
     

@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		227675581BE2F0180030C638 /* OptionOneCellViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227675571BE2F0180030C638 /* OptionOneCellViewControllers.swift */; };
+		2276755A1BE40C840030C638 /* OptionOneManageCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227675591BE40C840030C638 /* OptionOneManageCellViewController.swift */; };
+		2276755C1BE415240030C638 /* ChooseCellProcessPlan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2276755B1BE415240030C638 /* ChooseCellProcessPlan.storyboard */; };
+		2276755E1BE415570030C638 /* ChooseCellProcessPlanRevisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2276755D1BE415570030C638 /* ChooseCellProcessPlanRevisionViewController.swift */; };
+		2276759F1BE42AA50030C638 /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2276759E1BE42AA50030C638 /* RootTableViewController.swift */; };
+		228D52671BE430E00030EEE3 /* OptionTwoCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D52661BE430E00030EEE3 /* OptionTwoCellViewController.swift */; };
+		228D52691BE435120030EEE3 /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D52681BE435120030EEE3 /* CustomSegue.swift */; };
 		22D2DAF61BE28FF400238CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DAF51BE28FF400238CF6 /* AppDelegate.swift */; };
 		22D2DAF81BE28FF400238CF6 /* OptionOneControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2DAF71BE28FF400238CF6 /* OptionOneControllers.swift */; };
 		22D2DAFB1BE28FF400238CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22D2DAF91BE28FF400238CF6 /* Main.storyboard */; };
@@ -56,6 +62,12 @@
 
 /* Begin PBXFileReference section */
 		227675571BE2F0180030C638 /* OptionOneCellViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionOneCellViewControllers.swift; sourceTree = "<group>"; };
+		227675591BE40C840030C638 /* OptionOneManageCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionOneManageCellViewController.swift; sourceTree = "<group>"; };
+		2276755B1BE415240030C638 /* ChooseCellProcessPlan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChooseCellProcessPlan.storyboard; sourceTree = "<group>"; };
+		2276755D1BE415570030C638 /* ChooseCellProcessPlanRevisionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCellProcessPlanRevisionViewController.swift; sourceTree = "<group>"; };
+		2276759E1BE42AA50030C638 /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
+		228D52661BE430E00030EEE3 /* OptionTwoCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionTwoCellViewController.swift; sourceTree = "<group>"; };
+		228D52681BE435120030EEE3 /* CustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegue.swift; sourceTree = "<group>"; };
 		22D2DAF21BE28FF400238CF6 /* AutomationUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutomationUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D2DAF51BE28FF400238CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22D2DAF71BE28FF400238CF6 /* OptionOneControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionOneControllers.swift; sourceTree = "<group>"; };
@@ -140,13 +152,19 @@
 			isa = PBXGroup;
 			children = (
 				22D2DAF51BE28FF400238CF6 /* AppDelegate.swift */,
+				2276759E1BE42AA50030C638 /* RootTableViewController.swift */,
 				22D2DAF71BE28FF400238CF6 /* OptionOneControllers.swift */,
 				227675571BE2F0180030C638 /* OptionOneCellViewControllers.swift */,
+				227675591BE40C840030C638 /* OptionOneManageCellViewController.swift */,
+				228D52661BE430E00030EEE3 /* OptionTwoCellViewController.swift */,
+				2276755D1BE415570030C638 /* ChooseCellProcessPlanRevisionViewController.swift */,
 				22D2DB281BE292EF00238CF6 /* AutomationTableView.swift */,
 				22D2DB4E1BE2E2D500238CF6 /* CustomTableCell.swift */,
+				228D52681BE435120030EEE3 /* CustomSegue.swift */,
 				22D2DAF91BE28FF400238CF6 /* Main.storyboard */,
 				22D2DB261BE2903600238CF6 /* AutomationTableView.xib */,
 				22D2DB4C1BE2DFF700238CF6 /* CustomTableCell.xib */,
+				2276755B1BE415240030C638 /* ChooseCellProcessPlan.storyboard */,
 				22D2DB491BE2A4A400238CF6 /* Helper */,
 				22D2DB2A1BE295F200238CF6 /* DataModel */,
 				22D2DAFC1BE28FF400238CF6 /* AutomationUIDemo.xcdatamodeld */,
@@ -310,6 +328,7 @@
 			files = (
 				22D2DB271BE2903600238CF6 /* AutomationTableView.xib in Resources */,
 				22D2DB031BE28FF400238CF6 /* LaunchScreen.storyboard in Resources */,
+				2276755C1BE415240030C638 /* ChooseCellProcessPlan.storyboard in Resources */,
 				22D2DB4D1BE2DFF700238CF6 /* CustomTableCell.xib in Resources */,
 				22D2DB001BE28FF400238CF6 /* Assets.xcassets in Resources */,
 				22D2DAFB1BE28FF400238CF6 /* Main.storyboard in Resources */,
@@ -350,14 +369,19 @@
 				22D2DB3A1BE2961B00238CF6 /* CellProcessPlan.swift in Sources */,
 				22D2DB441BE2961B00238CF6 /* CellEntity.swift in Sources */,
 				22D2DB4F1BE2E2D500238CF6 /* CustomTableCell.swift in Sources */,
+				228D52671BE430E00030EEE3 /* OptionTwoCellViewController.swift in Sources */,
 				22D2DB3B1BE2961B00238CF6 /* ProcessPlan+CoreDataProperties.swift in Sources */,
 				22D2DB431BE2961B00238CF6 /* CellEntity+CoreDataProperties.swift in Sources */,
+				2276755A1BE40C840030C638 /* OptionOneManageCellViewController.swift in Sources */,
 				22D2DB4B1BE2A4BA00238CF6 /* CoreDataHelper.swift in Sources */,
 				22D2DAFE1BE28FF400238CF6 /* AutomationUIDemo.xcdatamodeld in Sources */,
 				22D2DAF81BE28FF400238CF6 /* OptionOneControllers.swift in Sources */,
+				228D52691BE435120030EEE3 /* CustomSegue.swift in Sources */,
+				2276759F1BE42AA50030C638 /* RootTableViewController.swift in Sources */,
 				22D2DB3C1BE2961B00238CF6 /* ProcessPlan.swift in Sources */,
 				22D2DAF61BE28FF400238CF6 /* AppDelegate.swift in Sources */,
 				22D2DB421BE2961B00238CF6 /* Category.swift in Sources */,
+				2276755E1BE415570030C638 /* ChooseCellProcessPlanRevisionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

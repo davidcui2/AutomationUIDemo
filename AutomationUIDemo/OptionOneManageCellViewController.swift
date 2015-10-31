@@ -1,5 +1,5 @@
 //
-//  OptionOneCellViewControllers.swift
+//  OptionOneManageCellViewController.swift
 //  AutomationUIDemo
 //
 //  Created by Zhihao Cui on 30/10/2015.
@@ -9,22 +9,22 @@
 import Foundation
 import UIKit
 
-class OptionOneDesignCellViewController : UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+class OptionOneManageCellViewController : UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIPopoverPresentationControllerDelegate, ChooseCellProcessPlanRevisionDelegate  {
     
     @IBOutlet var _stackView: UIStackView!
     
     var _categoryView : AutomationTableView!
-    var _cellProcessPlanView : AutomationTableView!
-    var _cellProcessPlanRevisionView : AutomationTableView!
+    var _cellView : AutomationTableView!
+    var _cellEntityView : AutomationTableView!
     
     var _categoryList : [Category] = []
-    var _cellProcessPlanList : [CellProcessPlan] = []
-    var _cellProcessPlanRevisionList : [CellProcessPlanRevision] = []
+    var _cellList : [Cell] = []
+    var _cellEntityList : [CellEntity] = []
     
     let kCellIdentifier = "textFieldCell"
     
-    var _selectedCategoryIndex : Int!
-    var _selectedCellProcessPlanIndex : Int!
+    var _selectedCategoryIndex : Int?
+    var _selectedCellIndex : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,35 +37,35 @@ class OptionOneDesignCellViewController : UIViewController, UITableViewDataSourc
         _categoryView.titleLabel.text = "Category"
         _categoryView.addButton.addTarget(self, action: "addCategory:", forControlEvents: .TouchUpInside)
         _categoryView.deleteButton.addTarget(self, action: "deleteCategory:", forControlEvents: .TouchUpInside)
+        _categoryView.deleteButton.enabled = false
         _categoryView.tableView.dataSource = self
         _categoryView.tableView.delegate = self
-        _categoryView.deleteButton.enabled = false
         _categoryView.tableView.registerNib(UINib(nibName: "CustomTableCell", bundle: nil), forCellReuseIdentifier: kCellIdentifier)
         _categoryView.tag = 1
         
-        _cellProcessPlanView = AutomationTableView.instanceFromNib()
-        _cellProcessPlanView.titleLabel.text = "Cell Process Plan"
-        _cellProcessPlanView.addButton.addTarget(self, action: "addCellProcessPlan:", forControlEvents: .TouchUpInside)
-        _cellProcessPlanView.tableView.dataSource = self
-        _cellProcessPlanView.tableView.delegate = self
-        _cellProcessPlanView.tableView.registerNib(UINib(nibName: "CustomTableCell", bundle: nil), forCellReuseIdentifier: kCellIdentifier)
-        _cellProcessPlanView.addButton.enabled = false
-        _cellProcessPlanView.deleteButton.enabled = false
-        _cellProcessPlanView.tag = 2
+        _cellView = AutomationTableView.instanceFromNib()
+        _cellView.titleLabel.text = "Cell"
+        _cellView.addButton.addTarget(self, action: "addCell:", forControlEvents: .TouchUpInside)
+        _cellView.tableView.dataSource = self
+        _cellView.tableView.delegate = self
+        _cellView.tableView.registerNib(UINib(nibName: "CustomTableCell", bundle: nil), forCellReuseIdentifier: kCellIdentifier)
+        _cellView.addButton.enabled = false
+        _cellView.deleteButton.enabled = false
+        _cellView.tag = 2
         
-        _cellProcessPlanRevisionView = AutomationTableView.instanceFromNib()
-        _cellProcessPlanRevisionView.titleLabel.text = "Cell Process Plan Revision"
-        _cellProcessPlanRevisionView.addButton.addTarget(self, action: "addCellProcessPlanRevision:", forControlEvents: .TouchUpInside)
-        _cellProcessPlanRevisionView.tableView.dataSource = self
-        _cellProcessPlanRevisionView.tableView.delegate = self
-        _cellProcessPlanRevisionView.tableView.registerNib(UINib(nibName: "CustomTableCell", bundle: nil), forCellReuseIdentifier: kCellIdentifier)
-        _cellProcessPlanRevisionView.addButton.enabled = false
-        _cellProcessPlanRevisionView.deleteButton.enabled = false
-        _cellProcessPlanRevisionView.tag = 3
+        _cellEntityView = AutomationTableView.instanceFromNib()
+        _cellEntityView.titleLabel.text = "Cell Entity"
+        _cellEntityView.addButton.addTarget(self, action: "addCellEntity:", forControlEvents: .TouchUpInside)
+        _cellEntityView.tableView.dataSource = self
+        _cellEntityView.tableView.delegate = self
+        _cellEntityView.tableView.registerNib(UINib(nibName: "CustomTableCell", bundle: nil), forCellReuseIdentifier: kCellIdentifier)
+        _cellEntityView.addButton.enabled = false
+        _cellEntityView.deleteButton.enabled = false
+        _cellEntityView.tag = 3
         
         _stackView.addArrangedSubview(_categoryView)
-        _stackView.addArrangedSubview(_cellProcessPlanView)
-        _stackView.addArrangedSubview(_cellProcessPlanRevisionView)
+        _stackView.addArrangedSubview(_cellView)
+        _stackView.addArrangedSubview(_cellEntityView)
     }
     
     //MARK:- Button events
@@ -93,34 +93,45 @@ class OptionOneDesignCellViewController : UIViewController, UITableViewDataSourc
         _categoryView.tableView.reloadData()
         _categoryView.tableView.endUpdates()
         
-        _cellProcessPlanList = []
-        _cellProcessPlanRevisionList = []
-        _cellProcessPlanView.tableView.reloadData()
-        _cellProcessPlanRevisionView.tableView.reloadData()
+        _cellList = []
+        _cellEntityList = []
+        _cellView.tableView.reloadData()
+        _cellEntityView.tableView.reloadData()
     }
-    
-    @IBAction func addCellProcessPlan(sender: UIButton) {
-        print("addCellProcessPlan called")
-        let indexPath = NSIndexPath(forItem: _cellProcessPlanList.count, inSection: 0)
-        _cellProcessPlanView.tableView.beginUpdates()
-        if CoreDataHelper().addCellProcessPlan(withName: "", toCategory: _categoryList[_selectedCategoryIndex]) {
-            _cellProcessPlanView.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+
+    @IBAction func addCell(sender: UIButton) {
+        print("addCell called")
+        let indexPath = NSIndexPath(forItem: _cellList.count, inSection: 0)
+        _cellView.tableView.beginUpdates()
+        if CoreDataHelper().addCell(withName: "", toCategory: _categoryList[_selectedCategoryIndex!]) {
+            _cellView.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
         reloadTableDataSource(2)
-        _cellProcessPlanView.tableView.reloadData()
-        _cellProcessPlanView.tableView.endUpdates()
+        _cellView.tableView.reloadData()
+        _cellView.tableView.endUpdates()
+    }
+
+    @IBAction func addCellEntity(sender: UIButton) {
+        print("addCellEntity called")
+        
+        // Display choice of all available cell process plan revision
+        let storeyboard = UIStoryboard(name: "ChooseCellProcessPlan", bundle: nil)
+        let menuViewController = storeyboard.instantiateViewControllerWithIdentifier("ChooseCellProcessPlanRevisionViewController") as! ChooseCellProcessPlanRevisionViewController
+        menuViewController.delegate = self
+        menuViewController.modalPresentationStyle = .FormSheet
+        menuViewController.preferredContentSize = CGSizeMake(_stackView.bounds.width - 100, _stackView.bounds.height - 20)
+        
+        let popoverMenuViewController = menuViewController.popoverPresentationController
+        popoverMenuViewController?.permittedArrowDirections = .Any
+        popoverMenuViewController?.delegate = self
+        
+        presentViewController(menuViewController, animated: true, completion: nil)
     }
     
-    @IBAction func addCellProcessPlanRevision(sender: UIButton) {
-        print("addCellProcessPlanRevision called")
-        let indexPath = NSIndexPath(forItem: _cellProcessPlanRevisionList.count, inSection: 0)
-        _cellProcessPlanRevisionView.tableView.beginUpdates()
-        if CoreDataHelper().addCellProcessPlanRevision(withName: "", toCellProcessPlan: _cellProcessPlanList[_selectedCellProcessPlanIndex]) {
-            _cellProcessPlanRevisionView.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-        }
-        reloadTableDataSource(3)
-        _cellProcessPlanRevisionView.tableView.reloadData()
-        _cellProcessPlanRevisionView.tableView.endUpdates()
+    //MARK:- Popover Delegate
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .FormSheet
     }
     
     //MARK:- Table View Delegate & Data Source
@@ -130,13 +141,12 @@ class OptionOneDesignCellViewController : UIViewController, UITableViewDataSourc
             cell.textField.placeholder = "Category name"
             cell.textField.text = _categoryList[indexPath.row].name!
         } else if tableView.superview!.tag == 2 {
-            cell.textField.placeholder = "Process Plan name"
-            cell.textField.text = _cellProcessPlanList[indexPath.row].name!
+            cell.textField.placeholder = "Cell name"
+            cell.textField.text = _cellList[indexPath.row].name!
         } else if tableView.superview!.tag == 3 {
-            cell.textField.placeholder = "Process Plan Revision name"
-            cell.textField.text = _cellProcessPlanRevisionList[indexPath.row].name!
+            cell.textField.placeholder = "Cell Entity name"
+            cell.textField.text = _cellEntityList[indexPath.row].name!
         }
-        
         cell.layer.shouldRasterize = true
         cell.layer.cornerRadius =  10.0
         cell.layer.borderColor=UIColor.whiteColor().CGColor
@@ -145,6 +155,8 @@ class OptionOneDesignCellViewController : UIViewController, UITableViewDataSourc
         cell.textField.returnKeyType = .Done
         cell.textField.delegate = self
         
+        cell.contentView.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.5)
+        
         return cell
     }
     
@@ -152,9 +164,9 @@ class OptionOneDesignCellViewController : UIViewController, UITableViewDataSourc
         if tableView.superview!.tag == 1 {
             return _categoryList.count
         } else if tableView.superview!.tag == 2 {
-            return _cellProcessPlanList.count
+            return _cellList.count
         } else if tableView.superview!.tag == 3 {
-            return _cellProcessPlanRevisionList.count
+            return _cellEntityList.count
         }
         
         return 0
@@ -165,28 +177,31 @@ class OptionOneDesignCellViewController : UIViewController, UITableViewDataSourc
         tableView.cellForRowAtIndexPath(indexPath)?.contentView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 0.1)
         
         if tableView.superview!.tag == 1 {
+            _categoryView.deleteButton.enabled = true
+            
             _selectedCategoryIndex = indexPath.row
-            _cellProcessPlanView.addButton.enabled = true
+            _cellView.addButton.enabled = true
             reloadTableDataSource(2)
-            _cellProcessPlanView.tableView.reloadData()
-            _cellProcessPlanRevisionView.addButton.enabled = false
-            _cellProcessPlanRevisionList.removeAll()
-            _cellProcessPlanRevisionView.tableView.reloadData()
+            _cellView.tableView.reloadData()
+            _cellEntityView.addButton.enabled = false
+            _cellEntityList.removeAll()
+            _cellEntityView.tableView.reloadData()
         } else if tableView.superview!.tag == 2 {
-            _selectedCellProcessPlanIndex = indexPath.row
-            _cellProcessPlanRevisionView.addButton.enabled = true
+            _selectedCellIndex = indexPath.row
+            _cellEntityView.addButton.enabled = true
             reloadTableDataSource(3)
-            _cellProcessPlanRevisionView.tableView.reloadData()
+            _cellEntityView.tableView.reloadData()
         }
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.cellForRowAtIndexPath(indexPath)?.contentView.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.5)
     }
-    
+
     //MARK:- Text Field Delegate
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
         let tableCell = textField.superview!.superview! as! TextFieldTableCell
         let tableView = tableCell.superview!.superview! as! UITableView
         let indexPath = tableView.indexPathForCell(tableCell)
@@ -195,15 +210,28 @@ class OptionOneDesignCellViewController : UIViewController, UITableViewDataSourc
             let nameChange = CoreDataHelper().changeCategory(_categoryList[(indexPath?.row)!], withName: textField.text!)
             print("Change Category name success: \(nameChange)")
         } else if tableView.superview!.tag == 2 {
-            let nameChange = CoreDataHelper().changeCellProcessPlan(_cellProcessPlanList[(indexPath?.row)!], withName: textField.text!)
-            print("Change Process Plan name success: \(nameChange)")
+            let nameChange = CoreDataHelper().changeCell(_cellList[(indexPath?.row)!], withName: textField.text!)
+            print("Change Cell name success: \(nameChange)")
         } else if tableView.superview!.tag == 3 {
-            let nameChange = CoreDataHelper().changeCellProcessPlanRevision(_cellProcessPlanRevisionList[(indexPath?.row)!], withName: textField.text!)
-            print("Change Process Plan Revision name success: \(nameChange)")
+            let nameChange = CoreDataHelper().changeCellEntity(_cellEntityList[(indexPath?.row)!], withName: textField.text!)
+            print("Change Cell Entity name success: \(nameChange)")
         }
         
         textField.resignFirstResponder()
         return true
+    }
+    
+    //MARK:- Choose Cell Process Plan Revision Delegate
+    func chooseCellProcessPlanRevision(cellProcessPlanRevision: CellProcessPlanRevision) {
+        print("chooseCellProcessPlanRevision called")
+        let indexPath = NSIndexPath(forItem: _cellEntityList.count, inSection: 0)
+        _cellEntityView.tableView.beginUpdates()
+        if CoreDataHelper().addCellEntity(withName: "", toCell: _cellList[_selectedCellIndex!], withRevision: cellProcessPlanRevision) {
+            _cellEntityView.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        }
+        reloadTableDataSource(3)
+        _cellEntityView.tableView.reloadData()
+        _cellEntityView.tableView.endUpdates()
     }
     
     //MARK:- Utility
@@ -223,9 +251,9 @@ class OptionOneDesignCellViewController : UIViewController, UITableViewDataSourc
         if listNumber == 1 {
             _categoryList = CoreDataHelper().getCategory()
         } else if listNumber == 2 {
-            _cellProcessPlanList = CoreDataHelper().getCellProcessPlan(byCategory: _categoryList[_selectedCategoryIndex])
+            _cellList = CoreDataHelper().getCell(byCategory: _categoryList[_selectedCategoryIndex!]) ?? []
         } else if listNumber == 3 {
-            _cellProcessPlanRevisionList = CoreDataHelper().getCellProcessPlanRevision(byCellProcessPlan: _cellProcessPlanList[_selectedCellProcessPlanIndex])
+            _cellEntityList = CoreDataHelper().getCellEntity(byCell: _cellList[_selectedCellIndex!]) ?? []
         }
     }
 
